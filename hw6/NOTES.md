@@ -135,8 +135,15 @@ Not building: online booking calendar, OpenEMR integration, patient accounts or 
 - The public site stays plain static files, so it can be copied to MercyMed's server later.
 - Team decision (not a client requirement): the admin backend stays separate from the OpenEMR server, for patient-data safety. (Corrected in `docs/CLIENT-REQUIREMENTS.md` §13, Nov 2026.)
 
+### Phase 3 status (paused for submission, 18 Nov 2026)
+- Supabase project `mercymed-website` (ref `ijemuwskoqrmqqgdpxnw`, Frankfurt, free plan) created by the team lead.
+- **Applied:** migration 1 (staff and access checks) and migration 2 (content tables). 59 of 59 security tests pass on Supabase (run in a rolled-back transaction); the public API refuses all writes and hides `updated_by`.
+- **Not applied / not committed:** migration 3 (removes leftover default permissions and API access to Supabase's `rls_auto_enable` helper) — drafted and tested locally, waiting for approval.
+- **Open:** public sign-ups were still enabled in the dashboard (`disable_signup: false`) — must be switched off before any account is created; confirm the 12-character password minimum.
+- Not started: migration for drafts/history, photo bucket, seed, staff accounts. The public site does not use Supabase yet.
+
 ### Before Phase 3
-- [ ] Starting roles (who is admin): team lead to confirm with Dr. Lukas
+- [x] Initial admin: team lead (others added later); other roles to confirm with Dr. Lukas
 - [ ] MercyMed email to own the Supabase project (otherwise start under the team lead and transfer at handover)
 
 ### Next steps
