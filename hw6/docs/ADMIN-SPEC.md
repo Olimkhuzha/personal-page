@@ -24,7 +24,7 @@ MercyMed staff keep the website up to date themselves, "more or less in real tim
 | **Admin** | Everything an editor can, plus manage staff: promote to admin, demote to editor, switch access off and on, and permanently remove items that have been in **Deleted** for 90+ days |
 | **Project owner** (the person who owns the Supabase project) | Creates staff accounts by hand, resets lost two-factor devices, runs exports into the repo. Team lead now; MercyMed after handover. Not a role inside the panel. |
 
-- Starting roles: to be confirmed by the team lead with Dr. Lukas (Q1).
+- **Initial admin: team lead (others added later).** Roles for Dr. Lukas and the other staff are still to be confirmed with Dr. Lukas (Q1).
 - **No public sign-up.** Accounts are created only by the project owner in the Supabase dashboard.
 - **At least one active admin** must always exist; the database refuses a change that would leave none (Q11).
 - "Removing" a staff member means **switching their access off**. Their account and name stay, so the history still reads "changed by …" (Q11).
@@ -249,7 +249,7 @@ Run in Phase 3 (database), Phase 5 (panel) and again in Phase 6. Each attack tes
 
 ## 13. Open questions (not blocking Phase 3)
 
-- Starting roles (who is admin) — team lead to confirm with Dr. Lukas.
+- Initial admin: team lead (others added later). Roles for the other staff — team lead to confirm with Dr. Lukas.
 - MercyMed email for the Supabase account — to confirm before Phase 3.
 - Exact Supabase dashboard menu names for project transfer and removing a two-factor device — checked during Phase 3.
 - Who runs Export and commits `content.js` after handover — team lead to confirm with Dr. Lukas (§8 step 5).
