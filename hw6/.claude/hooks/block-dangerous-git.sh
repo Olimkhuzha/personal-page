@@ -17,6 +17,13 @@ COMMAND=$(printf '%s' "$INPUT" | jq -er '.tool_input.command | strings') \
   || block "could not read the command from hook input"
 COMMAND=$(printf '%s' "$COMMAND" | tr -d '\r')
 
+# Quoted text with spaces (e.g. a commit message) is dropped before checking,
+# so words like "push" inside it don't cause a block. A quoted string that is
+# itself a git command (bash -c "git push") is still checked, on its own line.
+QUOTED_GIT=$(printf '%s\n' "$COMMAND" | grep -oE "\"[[:space:]]*git[^\"]*\"|'[[:space:]]*git[^']*'" || true)
+STRIPPED=$(printf '%s\n' "$COMMAND" | sed -E "s/\"[^\"]*[[:space:]][^\"]*\"/\"\"/g; s/'[^']*[[:space:]][^']*'/''/g")
+CHECK=$(printf '%s\n%s\n' "$STRIPPED" "$QUOTED_GIT")
+
 # "git" (or git.exe) as a word, then anything except a command separator,
 # then the subcommand. This also catches "git -C dir push" etc.
 G='(^|[^[:alnum:]_./-])git(\.exe)?[[:space:]]+([^;&|]*[[:space:]])?'
@@ -33,7 +40,7 @@ DANGEROUS_PATTERNS=(
 )
 
 for pattern in "${DANGEROUS_PATTERNS[@]}"; do
-  if printf '%s\n' "$COMMAND" | grep -qE -- "$pattern"; then
+  if printf '%s\n' "$CHECK" | grep -qE -- "$pattern"; then
     block "'$COMMAND' matches a dangerous git pattern"
   fi
 done
