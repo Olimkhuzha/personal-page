@@ -16,6 +16,10 @@
       "Bash(git branch --delete *)",
       "Bash(git rebase)",
       "Bash(git rebase *)",
+      "Bash(git pull --rebase)",
+      "Bash(git pull --rebase *)",
+      "Bash(git checkout -f)",
+      "Bash(git checkout -f *)",
       "Bash(git checkout .)",
       "Bash(git restore .)",
       "PowerShell(git push)",
@@ -33,6 +37,10 @@
       "PowerShell(git branch --delete *)",
       "PowerShell(git rebase)",
       "PowerShell(git rebase *)",
+      "PowerShell(git pull --rebase)",
+      "PowerShell(git pull --rebase *)",
+      "PowerShell(git checkout -f)",
+      "PowerShell(git checkout -f *)",
       "PowerShell(git checkout .)",
       "PowerShell(git restore .)"
     ]

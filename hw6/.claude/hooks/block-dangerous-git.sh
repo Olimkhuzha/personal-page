@@ -22,11 +22,13 @@ COMMAND=$(printf '%s' "$COMMAND" | tr -d '\r')
 # itself a git command (bash -c "git push") is still checked, on its own line.
 QUOTED_GIT=$(printf '%s\n' "$COMMAND" | grep -oE "\"[[:space:]]*git[^\"]*\"|'[[:space:]]*git[^']*'" || true)
 STRIPPED=$(printf '%s\n' "$COMMAND" | sed -E "s/\"[^\"]*[[:space:]][^\"]*\"/\"\"/g; s/'[^']*[[:space:]][^']*'/''/g")
-CHECK=$(printf '%s\n%s\n' "$STRIPPED" "$QUOTED_GIT")
+# Remaining quote marks are removed so "git" push or 'push' still match.
+CHECK=$(printf '%s\n%s\n' "$STRIPPED" "$QUOTED_GIT" | tr -d "\"'")
 
-# "git" (or git.exe) as a word, then anything except a command separator,
-# then the subcommand. This also catches "git -C dir push" etc.
-G='(^|[^[:alnum:]_./-])git(\.exe)?[[:space:]]+([^;&|]*[[:space:]])?'
+# "git" (or git.exe, optionally with a path like /usr/bin/ or C:\Git\bin\)
+# as a word, then anything except a command separator, then the subcommand.
+# This also catches "git -C dir push" etc.
+G='(^|[^[:alnum:]_.-])([^[:space:];&|]*[/\\])?git(\.exe)?[[:space:]]+([^;&|]*[[:space:]])?'
 END='([[:space:]]|$)'
 
 DANGEROUS_PATTERNS=(
@@ -35,7 +37,9 @@ DANGEROUS_PATTERNS=(
   "${G}clean[[:space:]]+([^;&|]*[[:space:]])?(-[[:alnum:]]*f|--force)"
   "${G}branch[[:space:]]+([^;&|]*[[:space:]])?(-[[:alnum:]]*[dD]|--delete)"
   "${G}rebase${END}"
-  "${G}checkout[[:space:]]+(--[[:space:]]+)?\.${END}"
+  "${G}pull[[:space:]]+([^;&|]*[[:space:]])?(--rebase|-r)([=[:space:]]|$)"
+  "${G}checkout[[:space:]]+([^;&|]*[[:space:]])?(-f|--force)${END}"
+  "${G}checkout[[:space:]]+([^;&|]*[[:space:]])?\.${END}"  # checkout . / checkout HEAD -- .
   "${G}restore[[:space:]]+([^;&|]*[[:space:]])?\.${END}"
 )
 
