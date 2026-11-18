@@ -158,8 +158,9 @@
     current = lang;
     document.documentElement.lang = lang;
     document.title = t("meta.title");
-    var md = document.querySelector('meta[name="description"]');
-    if (md) md.setAttribute("content", t("meta.description"));
+    document.querySelectorAll('meta[name="description"], meta[property="og:description"]').forEach(function (m) {
+      m.setAttribute("content", t("meta.description"));
+    });
     document.querySelectorAll("[data-lang]").forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === lang));
     });
