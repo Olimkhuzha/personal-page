@@ -88,6 +88,9 @@ Not tested: a real WhatsApp send (the number is a placeholder).
 | 23 | Font weights at most 500; only Inter 400 and 500 are loaded | Feedback #5 and the "not too bold" design rule |
 | 24 | Text shortened (feedback #6) as approved: one-sentence About intro, no repeats. The six consultation languages are listed only in International, not on Home. "Evidence-based" stays visible on Home and About | International patients look for their own language there |
 | 25 | Feedback #7 (icons) not done | Not marked "Fix" in FEEDBACK-REVIEW.md |
+| 26 | Below 1200px the menu stays behind the ☰ button; CLAUDE.md rule changed to "Menu always reachable at the top and leads back home (a menu button is fine on narrow screens)" | Team lead decision after the Phase 1 review |
+| 27 | `meta description` and `og:description` switch to RU/KY with the language | Never mix languages on one page |
+| 28 | Links that open a new tab carry hidden text "(opens in a new tab)" for screen readers | Phase 1 review |
 
 Not building: online booking calendar, OpenEMR integration, patient accounts or lab results, medical AI, per-doctor pages, deployment to the clinic's German server.
 
@@ -112,6 +115,8 @@ Not building: online booking calendar, OpenEMR integration, patient accounts or 
 - Some portraits still show a little slide text at the edges (e.g. Mahabat).
 - Inter is loaded from Google Fonts; the page falls back to system fonts if it can't load.
 - Not hosted on the clinic's server or `mercymed.kg` yet (needs their tech support, Troy).
+- Description tags switch language only in the browser (JavaScript). Link previews (WhatsApp, Facebook) and search engines read the English tags in the HTML. Fixed by the same "render text into the HTML" work before launch.
+- `docs/CLIENT-REQUIREMENTS.md` still says "Menu always visible at the top"; only CLAUDE.md was changed (decision 26). Confirm with the clinic if needed.
 - The menu highlights "About" while the top of the page (hero) is on screen; this was already so before Phase 1.
 
 ### Git guardrails (development only)
