@@ -18,7 +18,7 @@ Skills **never** override 1–3. If a skill suggests something that conflicts wi
 - Keep Inter. No Arial or Times New Roman. Headings at most weight 500; body 400.
 - No animations, parallax, scroll effects, shaders, text effects, custom scrollbars or decorative visual effects.
 - No AI-generated images. Use only the photos in `assets/` or ones I give you.
-- Menu always visible at the top. One brand name: MercyMed. Never mix languages on one page.
+- Menu always reachable at the top and leads back home (a menu button is fine on narrow screens). One brand name: MercyMed. Never mix languages on one page.
 
 ## How to use the skills
 
