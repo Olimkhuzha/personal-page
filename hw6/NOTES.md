@@ -75,6 +75,11 @@ Not tested: a real WhatsApp send (the number is a placeholder).
 | 10 | Russian and Kyrgyz drafts labelled "translation pending review" | Client wants staff to check medical terms |
 | 11 | Inter font, orange buttons with dark text, darker orange for small text | Modern Cyrillic font; dark text keeps buttons readable (contrast) |
 | 12 | All team cards and photos the same size | Team feedback after first version |
+| 13 | v2 work happens on branch `mercymed-v2`; nothing is committed to `main` and Claude never pushes | Phase 0 (Nov 2026); the team lead reviews and pushes |
+| 14 | Git guardrail hook (`.claude/hooks/block-dangerous-git.sh`) checks every Bash and PowerShell command and blocks push, reset --hard, clean -f, rebase, pull --rebase, branch -d/-D, checkout -f / checkout . and restore . | Phase 0; adapted from the git-guardrails-claude-code skill, which only covered Bash |
+| 15 | The hook fails closed: missing jq, bad input, a script error, or a hook that can't start (`onFailure: block`) blocks the command | The skill's original script silently allowed everything when jq was missing |
+| 16 | Permission deny rules in `.claude/settings.json` repeat the same commands as a second layer | Defence in depth; they only match the plain command spellings |
+| 17 | `.gitattributes` keeps `*.sh` on LF line endings | A CRLF checkout on Windows would break the hook and block every command |
 
 Not building: online booking calendar, OpenEMR integration, patient accounts or lab results, medical AI, per-doctor pages, deployment to the clinic's German server.
 
@@ -99,6 +104,13 @@ Not building: online booking calendar, OpenEMR integration, patient accounts or 
 - Some portraits still show a little slide text at the edges (e.g. Mahabat).
 - Inter is loaded from Google Fonts; the page falls back to system fonts if it can't load.
 - Not hosted on the clinic's server or `mercymed.kg` yet (needs their tech support, Troy).
+
+### Git guardrails (development only)
+- A safety net against mistakes, not against deliberate evasion: git aliases, variables (`$g push`) or a quoted full path with spaces can still get past it. The rules in `CLAUDE.md` still apply.
+- Quoted text with spaces (e.g. commit messages) is ignored, so messages can mention these commands. A quoted string that starts with `git` is still checked, so a message like "git push docs" is blocked.
+- `git restore --staged .` is blocked even though it is harmless; use `git restore --staged <file>`.
+- The hook needs Git Bash and jq (installed with `winget install jqlang.jq`). Each check takes about 1 second on this PC.
+- The deny rules couldn't be tested on their own, because the hook always blocks first.
 
 ### Next steps
 1. Show the draft to Dr. Lukas and the MercyMed team for mid-point feedback (planned before end of November).
