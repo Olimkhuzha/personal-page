@@ -156,7 +156,14 @@ The repository is **public**. Only the public (publishable / anon) key may appea
 | Browser is never trusted | All checks above live in Supabase policies, constraints and triggers; the panel's own checks are only for friendlier messages |
 | Safe rendering | Public site and panel render database content with `textContent` / safe DOM methods only, never `innerHTML`. Links only from `tel:`, `mailto:`, `https:` (existing `makeLink`) |
 | Panel pages | `noindex`, not linked from the public menu, no third-party scripts except supabase-js from a CDN with an **exact pinned version** (and an integrity hash) |
+| Content-Security-Policy on panel pages | A `<meta http-equiv="Content-Security-Policy">` tag on every `admin/` page: `default-src 'none'`; `script-src 'self'` plus **only** the exact pinned supabase-js URL (no `'unsafe-inline'`, no `'unsafe-eval'`); `connect-src` the project's `https://<project>.supabase.co` (and `wss://` for it); `img-src 'self' blob: data:` plus the project's storage address; `style-src 'self' https://fonts.googleapis.com`; `font-src https://fonts.gstatic.com`; `base-uri 'none'`; `form-action 'self'`; `object-src 'none'`. All panel scripts are separate files (no inline `<script>`, no `onclick=`) |
+| Password length | **Minimum 12 characters**, set in the Supabase dashboard (Phase 3 setup step) |
 | Staff personal data | Staff names, emails and the history are readable only by logged-in staff and never exported (§8) |
+
+**Known limits**
+- **Draft photos:** a photo uploaded for a draft is stored in the public bucket straight away, so anyone who knows its random URL can open it before the item is published. The URL is not shown anywhere public and can't be guessed, but staff should not upload anything they wouldn't want seen early.
+- **No `frame-ancestors`:** GitHub Pages can't send security headers, and `frame-ancestors` (protection against the panel being shown inside another site's frame) doesn't work in a `<meta>` tag. Risk is low because every write still needs a login with two-factor; revisit if the site moves to a host that can send headers.
+- **Uploaded file type** is the type the uploader declares (see the storage row above).
 
 ## 8. Moving content from `content.js` to the database (Q7, addition 1)
 
@@ -164,6 +171,7 @@ The repository is **public**. Only the public (publishable / anon) key may appea
 2. **After seeding the database is the master.** Staff never edit `content.js`.
 3. **Public site (Phase 4):** loads published content from Supabase; if Supabase doesn't answer within a few seconds (down, paused or blocked), it uses `content.js`. The site looks and behaves the same either way.
 4. **Export:** the Export screen builds a new `content.js` from **published content only** — no drafts, no history, no deleted items, no staff names or emails, no `updated_by`. Interface labels and `whatsappNumber` are copied unchanged from the current file. The developer reviews the diff and commits it. Recommended after bigger changes and at least monthly.
+5. **Who runs Export and commits after handover:** **open — to confirm with Dr. Lukas** (options: Troy, FuMing's company, or nobody). If nobody, the fallback stays at the last committed export and slowly goes out of date; the site still works, but during a Supabase outage it would show older content (see §10.3).
 
 ## 9. What changes for the public site
 
@@ -190,6 +198,7 @@ Done by the **project owner**:
 
 ### 10.3 Other
 - Creating, switching off and re-enabling staff accounts: `docs/STAFF-GUIDE.md` (Phase 6).
+- **Export and commit of `content.js`:** before handover, the team lead. After handover: to confirm with Dr. Lukas (Troy, FuMing's company, or nobody; §8 step 5). Whoever it is needs write access to the repository; staff in the panel do not.
 - The free Supabase plan pauses an unused project after about a week; the site keeps working from `content.js`, and the panel shows how to wake it up.
 
 ## 11. Test plan
@@ -214,6 +223,8 @@ Run in Phase 3 (database), Phase 5 (panel) and again in Phase 6. Each attack tes
 | A13 | editor | save text containing `<script>`, `<img onerror>`, `javascript:` links | saved as plain text; shows as text on the site; no script runs; link not made |
 | A14 | editor | publish an existing text with RU empty | refused by the database, not only the panel |
 | A15 | anyone | search the repo and the exported `content.js` for the service_role key, staff emails, drafts | nothing found |
+| A16 | attacker (test) | inject an inline `<script>` into a panel page (e.g. through the browser console adding a script element with inline code, and an `onclick=` attribute) | blocked by the Content-Security-Policy; a CSP violation shows in the console; nothing runs |
+| A17 | anyone | set a staff password shorter than 12 characters | refused by Supabase |
 
 ### 11.2 Behaviour tests
 - Draft → preview → publish; preview visible only to the logged-in person.
@@ -241,3 +252,4 @@ Run in Phase 3 (database), Phase 5 (panel) and again in Phase 6. Each attack tes
 - Starting roles (who is admin) — team lead to confirm with Dr. Lukas.
 - MercyMed email for the Supabase account — to confirm before Phase 3.
 - Exact Supabase dashboard menu names for project transfer and removing a two-factor device — checked during Phase 3.
+- Who runs Export and commits `content.js` after handover — team lead to confirm with Dr. Lukas (§8 step 5).
