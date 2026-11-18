@@ -146,27 +146,25 @@ window.SITE_CONTENT = {
         eyebrow: "Private medical centre in Bishkek",
         title1: "Evidence-based, international medicine.",
         title2: "Care for the whole family in one place.",
-        text: "Children, teenagers, adults and pregnant patients are seen by local and international doctors in Tunguch microdistrict, near Ayu Grand.",
+        text: "Local and international doctors for the whole family, in Tunguch, Bishkek.",
         cta: "Request appointment via WhatsApp",
         secondary: "See our services",
-        langsLabel: "Consultations in",
-        langs: ["Kyrgyz", "Russian", "English", "Chinese", "German", "French"],
         instaLabel: "Our latest news on Instagram:"
       },
       highlights: [
-        { title: "Family-oriented", text: "Adults, children, teenagers and pregnant patients can all be seen in one place." },
-        { title: "Evidence-based medicine", text: "We follow evidence-based methods to diagnose and treat all of our patients." },
-        { title: "Local and international specialists", text: "Family medicine, pediatrics, gynecology, pulmonology and ultrasound." },
-        { title: "Training and skill development", text: "We provide training for doctors and medical students." }
+        { title: "Family-oriented", text: "Children, teenagers, adults and pregnant patients in one place." },
+        { title: "Evidence-based medicine", text: "Decisions based on research, without unnecessary tests." },
+        { title: "Local and international specialists", text: "Doctors from Kyrgyzstan and abroad working together." },
+        { title: "Training and skill development", text: "We train doctors and medical students." }
       ],
       about: {
         kicker: "About us",
         title: "High-quality care based on modern medical knowledge",
-        lead: "MercyMed is a private medical centre in Bishkek providing high-quality medical care based on modern medical knowledge and international experience.",
+        lead: "MercyMed is a private medical centre in Bishkek.",
         historyTitle: "Our story",
-        history: "For over 10 years our team has been running mobile clinics in the regions of Kyrgyzstan. The clinic in Bishkek opened in October 2023 to continue and expand this work: a fixed place for follow-up, a permanent team and our own medical licence.",
+        history: "Our team has run mobile clinics across Kyrgyzstan for over 10 years. In October 2023 we opened the clinic in Bishkek: a permanent place and team for follow-up care, with our own medical licence.",
         ebmTitle: "What evidence-based medicine means",
-        ebm: "Our medical decisions are based on research and international experience, not only on “the way it has always been done”. We try to limit unnecessary investigations and treatments, so patients do not pay for things they do not need.",
+        ebm: "Our decisions are based on research and international experience, not just habit. We avoid unnecessary tests and treatments, so you don't pay for what you don't need.",
         missionTitle: "Our mission",
         mission: "To improve the quality of life of our patients through competent, compassionate and comprehensive medical care.",
         valuesTitle: "Our values",
@@ -175,10 +173,10 @@ window.SITE_CONTENT = {
       services: {
         kicker: "Medical services",
         title: "What we offer",
-        intro: "We are an outpatient clinic: we see patients every day and can give medications and infusions, but we do not keep patients overnight.",
+        intro: "We see patients every day and can give medications and infusions. No overnight stays.",
         groups: [
           { title: "Daily consultations", items: ["Pediatrics", "Family medicine", "Internal medicine and pulmonology", "Gynecology", "Physical therapy", "Pregnancy, birth and after birth support"] },
-          { title: "Preventive check-ups", items: ["Growth and development check-ups", "Vision screening", "EKG", "Screening for anemia and diabetes", "Laboratory tests", "Check-ups for women and men"] },
+          { title: "Preventive check-ups", items: ["Growth and development check-ups", "Screening for anemia and diabetes", "Laboratory tests", "Check-ups for women and men"] },
           { title: "Medical documents and certificates", items: ["For schools", "For flying and travel/tourism", "For employment", "For insurance"] }
         ],
         extraTitle: "Additional services",
@@ -189,7 +187,7 @@ window.SITE_CONTENT = {
       appointment: {
         kicker: "Appointment",
         title: "Request an appointment",
-        text: "Fill in four details and send them to our receptionist on WhatsApp. She will reply with available times and the right doctor for you.",
+        text: "Send us four details on WhatsApp. Our receptionist will reply with a time and the right doctor for you.",
         firstName: "Name",
         lastName: "Surname",
         dob: "Date of birth",
@@ -238,7 +236,7 @@ window.SITE_CONTENT = {
       mobile: {
         kicker: "Mobile clinics",
         title: "The charitable heart of MercyMed",
-        text: "For over 10 years we have travelled to villages and rural areas with less access to medical care, in all regions of Kyrgyzstan.",
+        text: "We travel to villages and rural areas with less access to medical care, in all regions of Kyrgyzstan.",
         steps: [
           { title: "We are invited", text: "A village, health centre or local community invites us and prepares a place for the clinic." },
           { title: "The team travels", text: "Usually four or five doctors, a nurse, a receptionist and someone for the pharmacy, with a car full of medications." },
@@ -293,27 +291,25 @@ window.SITE_CONTENT = {
         eyebrow: "Частный медицинский центр в Бишкеке",
         title1: "Доказательная и международная медицина.",
         title2: "Забота обо всей семье в одном месте.",
-        text: "Детей, подростков, взрослых и беременных принимают местные и иностранные врачи в микрорайоне Тунгуч, рядом с Ayu Grand.",
+        text: "Местные и иностранные врачи для всей семьи — в Тунгуче, Бишкек.",
         cta: "Записаться через WhatsApp",
         secondary: "Наши услуги",
-        langsLabel: "Консультации на языках:",
-        langs: ["кыргызский", "русский", "английский", "китайский", "немецкий", "французский"],
         instaLabel: "Наши новости в Instagram:"
       },
       highlights: [
-        { title: "Для всей семьи", text: "Взрослые, дети, подростки и беременные могут получить помощь в одном месте." },
-        { title: "Доказательная медицина", text: "Мы диагностируем и лечим всех пациентов по методам доказательной медицины." },
-        { title: "Местные и иностранные специалисты", text: "Семейная медицина, педиатрия, гинекология, пульмонология и УЗИ." },
+        { title: "Для всей семьи", text: "Дети, подростки, взрослые и беременные — в одном месте." },
+        { title: "Доказательная медицина", text: "Решения на основе исследований, без лишних анализов." },
+        { title: "Местные и иностранные специалисты", text: "Врачи из Кыргызстана и других стран работают вместе." },
         { title: "Обучение и развитие", text: "Мы обучаем врачей и студентов-медиков." }
       ],
       about: {
         kicker: "О нас",
         title: "Качественная помощь на основе современных медицинских знаний",
-        lead: "MercyMed — частный медицинский центр в Бишкеке. Мы оказываем качественную медицинскую помощь на основе современных медицинских знаний и международного опыта.",
+        lead: "MercyMed — частный медицинский центр в Бишкеке.",
         historyTitle: "Наша история",
-        history: "Более 10 лет наша команда проводит выездные клиники в регионах Кыргызстана. Клиника в Бишкеке открылась в октябре 2023 года, чтобы продолжить и расширить эту работу: постоянное место для повторных приёмов, постоянная команда и собственная медицинская лицензия.",
+        history: "Наша команда более 10 лет проводит выездные клиники по всему Кыргызстану. В октябре 2023 года мы открыли клинику в Бишкеке: постоянное место и команда для повторных приёмов, с собственной медицинской лицензией.",
         ebmTitle: "Что такое доказательная медицина",
-        ebm: "Наши медицинские решения основаны на исследованиях и международном опыте, а не только на том, «как всегда делали». Мы стараемся избегать лишних обследований и лечения, чтобы пациенты не платили за то, что им не нужно.",
+        ebm: "Наши решения основаны на исследованиях и международном опыте, а не только на привычке. Мы избегаем лишних обследований и лечения, чтобы вы не платили за то, что вам не нужно.",
         missionTitle: "Наша миссия",
         mission: "Улучшать качество жизни пациентов с помощью компетентной, сострадательной и всесторонней медицинской помощи.",
         valuesTitle: "Наши ценности",
@@ -322,10 +318,10 @@ window.SITE_CONTENT = {
       services: {
         kicker: "Медицинские услуги",
         title: "Что мы предлагаем",
-        intro: "Мы — амбулаторная клиника: принимаем пациентов каждый день, можем ставить уколы и капельницы, но не оставляем пациентов на ночь.",
+        intro: "Мы принимаем пациентов каждый день, ставим уколы и капельницы. Без ночного пребывания.",
         groups: [
           { title: "Ежедневные консультации", items: ["Педиатрия", "Семейная медицина", "Терапия и пульмонология", "Гинекология", "Физиотерапия", "Сопровождение беременности, родов и послеродового периода"] },
-          { title: "Профилактические осмотры", items: ["Оценка роста и развития", "Проверка зрения", "ЭКГ", "Скрининг на анемию и диабет", "Лабораторные анализы", "Осмотры для женщин и мужчин"] },
+          { title: "Профилактические осмотры", items: ["Оценка роста и развития", "Скрининг на анемию и диабет", "Лабораторные анализы", "Осмотры для женщин и мужчин"] },
           { title: "Медицинские справки и документы", items: ["Для школ", "Для перелётов и путешествий", "Для работы", "Для страховки"] }
         ],
         extraTitle: "Дополнительные услуги",
@@ -336,7 +332,7 @@ window.SITE_CONTENT = {
       appointment: {
         kicker: "Запись",
         title: "Записаться на приём",
-        text: "Заполните четыре поля и отправьте их нашему администратору в WhatsApp. Она ответит, какое время свободно и какой врач вам подойдёт.",
+        text: "Отправьте нам четыре поля в WhatsApp. Администратор предложит время и подходящего врача.",
         firstName: "Имя",
         lastName: "Фамилия",
         dob: "Дата рождения",
@@ -385,7 +381,7 @@ window.SITE_CONTENT = {
       mobile: {
         kicker: "Выездные клиники",
         title: "Благотворительное сердце MercyMed",
-        text: "Более 10 лет мы выезжаем в сёла и отдалённые районы с ограниченным доступом к медицине — во всех областях Кыргызстана.",
+        text: "Мы выезжаем в сёла и отдалённые районы с ограниченным доступом к медицине — во всех областях Кыргызстана.",
         steps: [
           { title: "Нас приглашают", text: "Село, местный медпункт или община приглашает нас и готовит место для приёма." },
           { title: "Команда выезжает", text: "Обычно четыре-пять врачей, медсестра, администратор и сотрудник аптеки — с машиной, полной лекарств." },
@@ -440,27 +436,25 @@ window.SITE_CONTENT = {
         eyebrow: "Бишкектеги жеке медициналык борбор",
         title1: "Далилдүү жана эл аралык медицина.",
         title2: "Бүт үй-бүлөгө бир жерде кам көрүү.",
-        text: "Балдарды, өспүрүмдөрдү, чоңдорду жана кош бойлуу аялдарды жергиликтүү жана чет элдик дарыгерлер Түңгүч кичи районунда, Ayu Grand жанында кабыл алышат.",
+        text: "Бүт үй-бүлө үчүн жергиликтүү жана чет элдик дарыгерлер — Түңгүчтө, Бишкек.",
         cta: "WhatsApp аркылуу жазылуу",
         secondary: "Биздин кызматтар",
-        langsLabel: "Кеңеш берүү тилдери:",
-        langs: ["кыргыз", "орус", "англис", "кытай", "немис", "француз"],
         instaLabel: "Биздин жаңылыктар Instagram'да:"
       },
       highlights: [
-        { title: "Бүт үй-бүлө үчүн", text: "Чоңдор, балдар, өспүрүмдөр жана кош бойлуу аялдар бир жерден жардам ала алышат." },
-        { title: "Далилдүү медицина", text: "Бардык пациенттерди далилдүү медицинанын ыкмалары менен текшерип, дарылайбыз." },
-        { title: "Жергиликтүү жана чет элдик адистер", text: "Үй-бүлөлүк медицина, педиатрия, гинекология, пульмонология жана УЗИ." },
+        { title: "Бүт үй-бүлө үчүн", text: "Балдар, өспүрүмдөр, чоңдор жана кош бойлуу аялдар — бир жерде." },
+        { title: "Далилдүү медицина", text: "Изилдөөлөргө негизделген чечимдер, ашыкча анализдерсиз." },
+        { title: "Жергиликтүү жана чет элдик адистер", text: "Кыргызстандык жана чет элдик дарыгерлер бирге иштешет." },
         { title: "Окутуу жана өнүгүү", text: "Дарыгерлерди жана медицина студенттерин окутабыз." }
       ],
       about: {
         kicker: "Биз жөнүндө",
         title: "Заманбап медициналык билимге негизделген сапаттуу жардам",
-        lead: "MercyMed — Бишкектеги жеке медициналык борбор. Биз заманбап медициналык билимге жана эл аралык тажрыйбага негизделген сапаттуу медициналык жардам көрсөтөбүз.",
+        lead: "MercyMed — Бишкектеги жеке медициналык борбор.",
         historyTitle: "Биздин тарых",
-        history: "10 жылдан ашык убакыттан бери биздин команда Кыргызстандын аймактарында көчмө клиникаларды өткөрүп келет. Бишкектеги клиника бул ишти улантуу жана кеңейтүү үчүн 2023-жылдын октябрында ачылган: кайра кабыл алуу үчүн туруктуу жер, туруктуу команда жана өзүбүздүн медициналык лицензия.",
+        history: "Биздин команда 10 жылдан ашык Кыргызстан боюнча көчмө клиникаларды өткөрүп келет. 2023-жылдын октябрында Бишкекте клиника ачтык: кайра кабыл алуу үчүн туруктуу жер жана команда, өзүбүздүн медициналык лицензия менен.",
         ebmTitle: "Далилдүү медицина деген эмне",
-        ebm: "Биздин медициналык чечимдер «дайыма ушинтип жасалып келген» дегенге эмес, изилдөөлөргө жана эл аралык тажрыйбага негизделет. Пациенттер керексиз нерсеге акча төлөбөшү үчүн ашыкча текшерүүлөрдөн жана дарылоодон качабыз.",
+        ebm: "Биздин чечимдер адатка гана эмес, изилдөөлөргө жана эл аралык тажрыйбага негизделет. Керексиз нерсеге акча төлөбөшүңүз үчүн ашыкча текшерүүлөрдөн жана дарылоодон качабыз.",
         missionTitle: "Биздин миссия",
         mission: "Компетенттүү, боорукер жана ар тараптуу медициналык жардам аркылуу пациенттерибиздин жашоо сапатын жакшыртуу.",
         valuesTitle: "Биздин баалуулуктар",
@@ -469,10 +463,10 @@ window.SITE_CONTENT = {
       services: {
         kicker: "Медициналык кызматтар",
         title: "Эмне сунуштайбыз",
-        intro: "Биз амбулатордук клиникабыз: пациенттерди күн сайын кабыл алабыз, ийне сайып, тамчылатма коё алабыз, бирок пациенттерди түнкүсүн калтырбайбыз.",
+        intro: "Пациенттерди күн сайын кабыл алабыз, ийне сайып, тамчылатма коё алабыз. Түнкүсүн калтырбайбыз.",
         groups: [
           { title: "Күнүмдүк кабыл алуу", items: ["Педиатрия", "Үй-бүлөлүк медицина", "Ички оорулар жана пульмонология", "Гинекология", "Физиотерапия", "Кош бойлуулукта, төрөттө жана төрөттөн кийин колдоо"] },
-          { title: "Алдын алуу текшерүүлөрү", items: ["Өсүү жана өнүгүү текшерүүсү", "Көрүүнү текшерүү", "ЭКГ", "Аз кандуулукка жана диабетке скрининг", "Лабораториялык анализдер", "Аялдар жана эркектер үчүн текшерүү"] },
+          { title: "Алдын алуу текшерүүлөрү", items: ["Өсүү жана өнүгүү текшерүүсү", "Аз кандуулукка жана диабетке скрининг", "Лабораториялык анализдер", "Аялдар жана эркектер үчүн текшерүү"] },
           { title: "Медициналык маалымкаттар жана документтер", items: ["Мектептер үчүн", "Учуу жана саякат үчүн", "Жумуш үчүн", "Камсыздандыруу үчүн"] }
         ],
         extraTitle: "Кошумча кызматтар",
@@ -483,7 +477,7 @@ window.SITE_CONTENT = {
       appointment: {
         kicker: "Жазылуу",
         title: "Кабыл алууга жазылуу",
-        text: "Төрт талааны толтуруп, WhatsApp аркылуу администраторубузга жөнөтүңүз. Ал бош убакытты жана сизге ылайыктуу дарыгерди айтып жооп берет.",
+        text: "Төрт талааны WhatsApp аркылуу жөнөтүңүз. Администратор убакытты жана ылайыктуу дарыгерди сунуштайт.",
         firstName: "Аты",
         lastName: "Фамилиясы",
         dob: "Туулган күнү",
@@ -532,7 +526,7 @@ window.SITE_CONTENT = {
       mobile: {
         kicker: "Көчмө клиникалар",
         title: "MercyMed'дин кайрымдуу жүрөгү",
-        text: "10 жылдан ашык убакыттан бери биз медициналык жардам жетишсиз айылдарга жана алыскы аймактарга — Кыргызстандын бардык облустарына барабыз.",
+        text: "Биз медициналык жардам жетишсиз айылдарга жана алыскы аймактарга — Кыргызстандын бардык облустарына барабыз.",
         steps: [
           { title: "Бизди чакырышат", text: "Айыл, жергиликтүү медпункт же жамаат бизди чакырып, кабыл алуу үчүн жай даярдайт." },
           { title: "Команда жолго чыгат", text: "Адатта төрт-беш дарыгер, медайым, администратор жана дарыкана кызматкери — дары-дармекке толгон унаа менен." },
