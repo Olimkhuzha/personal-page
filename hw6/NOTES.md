@@ -94,7 +94,7 @@ Not tested: a real WhatsApp send (the number is a placeholder).
 | 29 | Admin panel design recorded in `docs/ADMIN-SPEC.md` (roles, two-factor login, draft/preview/publish, history, language rules, data model, security rules, test plan) | Phase 2 `/grill-me` session with the team lead |
 | 30 | Optional hero photo slot (hidden while empty) replaces "no hero image" (decision 6) | Client wants real photos; decision 6 was a team choice |
 
-Not building: online booking calendar, OpenEMR integration, patient accounts or lab results, medical AI, per-doctor pages, deployment to the clinic's German server.
+Not building: online booking calendar, OpenEMR integration, patient accounts or lab results, medical AI, per-doctor pages. Deployment to the clinic's German server only if MercyMed provides it (see Hosting plan).
 
 ---
 
@@ -127,6 +127,13 @@ Not building: online booking calendar, OpenEMR integration, patient accounts or 
 - `git restore --staged .` is blocked even though it is harmless; use `git restore --staged <file>`.
 - The hook needs Git Bash and jq (installed with `winget install jqlang.jq`). Each check takes about 1 second on this PC.
 - The deny rules couldn't be tested on their own, because the hook always blocks first.
+
+### Hosting plan
+- If our site wins the class competition, MercyMed will provide their server (via their IT contact, Troy). Until then: **free services only** — GitHub Pages for the site, the Supabase free plan for the backend.
+- Everything needed to rebuild the project lives in this repo: site and panel code, all migrations (`supabase/migrations/`), the seed script, the `content.js` export and the docs. Never secrets.
+- The backend stays portable: all security rules are in SQL migrations; no Supabase Edge Functions or paid-only features without the team lead's approval.
+- The public site stays plain static files, so it can be copied to MercyMed's server later.
+- Team decision (not a client requirement): the admin backend stays separate from the OpenEMR server, for patient-data safety. (Corrected in `docs/CLIENT-REQUIREMENTS.md` §13, Nov 2026.)
 
 ### Before Phase 3
 - [ ] Starting roles (who is admin): team lead to confirm with Dr. Lukas

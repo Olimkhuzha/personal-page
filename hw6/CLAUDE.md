@@ -38,6 +38,14 @@ Skills **never** override 1–3. If a skill suggests something that conflicts wi
 - Keep `NOTES.md` up to date at the end of each phase (decisions, open issues).
 - Stop at the end of each phase and wait for my approval before starting the next one.
 
+## Hosting plan
+
+If our site wins the class competition, MercyMed will provide their server. Until then we use **free services only**: GitHub Pages + the Supabase free plan.
+
+- **Everything needed to rebuild the project lives in this GitHub repo:** site and panel code, all migrations, the seed script, the `content.js` export and the docs. **Never secrets.**
+- **Keep the backend portable:** security rules live in SQL migrations. No Supabase Edge Functions or paid-only features unless I approve.
+- **The public site must keep working as plain static files**, so it can be copied to their server later.
+
 ## Content rules
 
 - **Never invent facts** (prices, hours, bios, experience, photos). Anything the clinic hasn't given shows the "awaiting clinic" label.
@@ -55,4 +63,5 @@ Skills **never** override 1–3. If a skill suggests something that conflicts wi
 - Uploads: images only (jpg, png, webp), size limit, only staff can upload.
 - Admin pages: `noindex`, not linked from the public menu.
 - **Never connect to, deploy to or touch MercyMed's own server or OpenEMR.**
+- **Team decision (not a client requirement):** the admin backend stays separate from the OpenEMR server, for patient-data safety.
 - The public site must still work if Supabase is down or paused: fall back to the content in `js/content.js`.
