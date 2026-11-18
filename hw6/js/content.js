@@ -15,11 +15,18 @@ window.SITE_CONTENT = {
     // Placeholder until MercyMed confirms the receptionist's WhatsApp number.
     whatsappNumber: "996000000000",
     whatsappIsPlaceholder: true,
-    instagramUrl: null,
-    address: null,
+    // Contact details given by the team lead, 18 Nov 2026 (docs/CLIENT-REQUIREMENTS.md §10).
+    instagramUrl: "https://www.instagram.com/mercymed.kg/",
+    instagramHandle: "@mercymed.kg",
+    address: {
+      en: "Isakeeva St. 18/15, Ala-Too complex",
+      ru: "ул. Исакеева, 18/15, комплекс «Ала-Тоо»",
+      ky: "Исакеев көчөсү, 18/15, «Ала-Тоо» комплекси"
+    },
     openingHours: null,
-    phone: null,
-    email: null,
+    // Shown in Contact only. The booking form keeps using whatsappNumber above.
+    phone: "+996 770 231 813",
+    email: "medicalcenter@mercymed.kg",
     prices: null
   },
 
@@ -249,7 +256,7 @@ window.SITE_CONTENT = {
         locationValue: "Tunguch microdistrict, Bishkek — near Ayu Grand and Ala-Too University",
         address: "Address",
         hours: "Opening hours",
-        phone: "Phone",
+        phone: "Phone / WhatsApp",
         email: "Email",
         whatsapp: "WhatsApp",
         instagram: "Instagram",
@@ -394,7 +401,7 @@ window.SITE_CONTENT = {
         locationValue: "Микрорайон Тунгуч, Бишкек — рядом с Ayu Grand и университетом Ала-Тоо",
         address: "Адрес",
         hours: "Часы работы",
-        phone: "Телефон",
+        phone: "Телефон / WhatsApp",
         email: "Эл. почта",
         whatsapp: "WhatsApp",
         instagram: "Instagram",
@@ -539,7 +546,7 @@ window.SITE_CONTENT = {
         locationValue: "Түңгүч кичи району, Бишкек — Ayu Grand жана Ала-Тоо университетинин жанында",
         address: "Дареги",
         hours: "Иш убактысы",
-        phone: "Телефон",
+        phone: "Телефон / WhatsApp",
         email: "Эл. почта",
         whatsapp: "WhatsApp",
         instagram: "Instagram",

@@ -28,6 +28,26 @@
     return v[current] || v.en;
   }
 
+  /* Builds a phone, email or web link from a setting value.
+     Only tel:, mailto: and https: links are made; anything else is shown as plain text. */
+  function makeLink(kind, value, labelSetting) {
+    var a = el("a", null, value);
+    if (kind === "tel") {
+      a.href = "tel:" + value.replace(/[^\d+]/g, "");
+    } else if (kind === "mailto") {
+      if (!/^[^\s@]+@[^\s@]+$/.test(value)) return null;
+      a.href = "mailto:" + value;
+    } else if (kind === "url") {
+      if (!/^https:\/\//.test(value)) return null;
+      a.href = value; a.target = "_blank"; a.rel = "noopener";
+      a.textContent = localized(C.settings[labelSetting]) || value.replace(/^https:\/\//, "");
+    } else {
+      return null;
+    }
+    a.className = "contact-link";
+    return a;
+  }
+
   /* ---------- simple text and lists ---------- */
   function renderText() {
     document.querySelectorAll("[data-t]").forEach(function (node) {
@@ -47,13 +67,9 @@
     document.querySelectorAll("[data-setting]").forEach(function (node) {
       var v = localized(C.settings[node.getAttribute("data-setting")]);
       if (v == null || v === "") { node.replaceChildren(pendingSpan()); return; }
-      if (node.hasAttribute("data-link")) {
-        var a = el("a", null, v.replace(/^https?:\/\//, ""));
-        a.href = v; a.target = "_blank"; a.rel = "noopener";
-        node.replaceChildren(a);
-      } else {
-        node.textContent = v;
-      }
+      var link = makeLink(node.getAttribute("data-link"), v, node.getAttribute("data-link-label"));
+      if (link) node.replaceChildren(link);
+      else node.textContent = v;
     });
     document.querySelectorAll("[data-if-setting]").forEach(function (node) {
       node.hidden = !C.settings[node.getAttribute("data-if-setting")];
