@@ -46,6 +46,7 @@
       if (!/^https:\/\//.test(value)) return null;
       a.href = value; a.target = "_blank"; a.rel = "noopener";
       a.textContent = (textKey && t(textKey)) || localized(C.settings[labelSetting]) || value.replace(/^https:\/\//, "");
+      a.append(" ", el("span", "visually-hidden", t("ui.newTab")));
     } else {
       return null;
     }

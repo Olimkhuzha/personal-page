@@ -135,7 +135,8 @@ window.SITE_CONTENT = {
         language: "Language",
         pending: "awaiting clinic",
         draftBanner: "Website draft for client review. Items marked “awaiting clinic” still need MercyMed's input.",
-        translationNote: ""
+        translationNote: "",
+        newTab: "(opens in a new tab)"
       },
       nav: {
         about: "About", services: "Services", team: "Team", corporate: "Corporate",
@@ -280,7 +281,8 @@ window.SITE_CONTENT = {
         language: "Язык",
         pending: "ожидаем от клиники",
         draftBanner: "Черновик сайта для согласования с клиникой. Пункты с пометкой «ожидаем от клиники» требуют данных от MercyMed.",
-        translationNote: "Перевод ожидает проверки сотрудниками MercyMed."
+        translationNote: "Перевод ожидает проверки сотрудниками MercyMed.",
+        newTab: "(откроется в новой вкладке)"
       },
       nav: {
         about: "О нас", services: "Услуги", team: "Команда", corporate: "Организациям",
@@ -425,7 +427,8 @@ window.SITE_CONTENT = {
         language: "Тил",
         pending: "клиникадан күтүлүүдө",
         draftBanner: "Клиника менен макулдашуу үчүн сайттын долбоору. «Клиникадан күтүлүүдө» деп белгиленгендерге MercyMed маалыматы керек.",
-        translationNote: "Котормо MercyMed кызматкерлеринин текшерүүсүн күтүүдө."
+        translationNote: "Котормо MercyMed кызматкерлеринин текшерүүсүн күтүүдө.",
+        newTab: "(жаңы өтмөктө ачылат)"
       },
       nav: {
         about: "Биз жөнүндө", services: "Кызматтар", team: "Команда", corporate: "Уюмдарга",
