@@ -29,8 +29,13 @@
   }
 
   /* Builds a phone, email or web link from a setting value.
-     Only tel:, mailto: and https: links are made; anything else is shown as plain text. */
-  function makeLink(kind, value, labelSetting) {
+     Only tel:, mailto: and https: links are made; anything else is shown as plain text.
+     Optional attributes on the node: data-link-label (setting used as link text),
+     data-link-text (translation key used as link text), data-link-class. */
+  function makeLink(node, value) {
+    var kind = node.getAttribute("data-link");
+    var labelSetting = node.getAttribute("data-link-label");
+    var textKey = node.getAttribute("data-link-text");
     var a = el("a", null, value);
     if (kind === "tel") {
       a.href = "tel:" + value.replace(/[^\d+]/g, "");
@@ -40,11 +45,11 @@
     } else if (kind === "url") {
       if (!/^https:\/\//.test(value)) return null;
       a.href = value; a.target = "_blank"; a.rel = "noopener";
-      a.textContent = localized(C.settings[labelSetting]) || value.replace(/^https:\/\//, "");
+      a.textContent = (textKey && t(textKey)) || localized(C.settings[labelSetting]) || value.replace(/^https:\/\//, "");
     } else {
       return null;
     }
-    a.className = "contact-link";
+    a.className = node.getAttribute("data-link-class") || "contact-link";
     return a;
   }
 
@@ -67,7 +72,7 @@
     document.querySelectorAll("[data-setting]").forEach(function (node) {
       var v = localized(C.settings[node.getAttribute("data-setting")]);
       if (v == null || v === "") { node.replaceChildren(pendingSpan()); return; }
-      var link = makeLink(node.getAttribute("data-link"), v, node.getAttribute("data-link-label"));
+      var link = makeLink(node, v);
       if (link) node.replaceChildren(link);
       else node.textContent = v;
     });

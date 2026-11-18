@@ -150,7 +150,8 @@ window.SITE_CONTENT = {
         cta: "Request appointment via WhatsApp",
         secondary: "See our services",
         langsLabel: "Consultations in",
-        langs: ["Kyrgyz", "Russian", "English", "Chinese", "German", "French"]
+        langs: ["Kyrgyz", "Russian", "English", "Chinese", "German", "French"],
+        instaLabel: "Our latest news on Instagram:"
       },
       highlights: [
         { title: "Family-oriented", text: "Adults, children, teenagers and pregnant patients can all be seen in one place." },
@@ -247,7 +248,8 @@ window.SITE_CONTENT = {
       instagram: {
         title: "Follow us on Instagram",
         text: "Instagram is where we share news, photos and patient stories most often.",
-        feedPending: "Instagram feed"
+        feedPending: "Instagram feed",
+        cta: "Open @mercymed.kg on Instagram"
       },
       contact: {
         kicker: "Contact",
@@ -295,7 +297,8 @@ window.SITE_CONTENT = {
         cta: "Записаться через WhatsApp",
         secondary: "Наши услуги",
         langsLabel: "Консультации на языках:",
-        langs: ["кыргызский", "русский", "английский", "китайский", "немецкий", "французский"]
+        langs: ["кыргызский", "русский", "английский", "китайский", "немецкий", "французский"],
+        instaLabel: "Наши новости в Instagram:"
       },
       highlights: [
         { title: "Для всей семьи", text: "Взрослые, дети, подростки и беременные могут получить помощь в одном месте." },
@@ -392,7 +395,8 @@ window.SITE_CONTENT = {
       instagram: {
         title: "Мы в Instagram",
         text: "В Instagram мы чаще всего делимся новостями, фото и историями пациентов.",
-        feedPending: "Лента Instagram"
+        feedPending: "Лента Instagram",
+        cta: "Открыть @mercymed.kg в Instagram"
       },
       contact: {
         kicker: "Контакты",
@@ -440,7 +444,8 @@ window.SITE_CONTENT = {
         cta: "WhatsApp аркылуу жазылуу",
         secondary: "Биздин кызматтар",
         langsLabel: "Кеңеш берүү тилдери:",
-        langs: ["кыргыз", "орус", "англис", "кытай", "немис", "француз"]
+        langs: ["кыргыз", "орус", "англис", "кытай", "немис", "француз"],
+        instaLabel: "Биздин жаңылыктар Instagram'да:"
       },
       highlights: [
         { title: "Бүт үй-бүлө үчүн", text: "Чоңдор, балдар, өспүрүмдөр жана кош бойлуу аялдар бир жерден жардам ала алышат." },
@@ -537,7 +542,8 @@ window.SITE_CONTENT = {
       instagram: {
         title: "Биз Instagram'да",
         text: "Жаңылыктарды, сүрөттөрдү жана пациенттердин окуяларын көбүнчө Instagram'да бөлүшөбүз.",
-        feedPending: "Instagram тасмасы"
+        feedPending: "Instagram тасмасы",
+        cta: "Instagram'да @mercymed.kg баракчасын ачуу"
       },
       contact: {
         kicker: "Байланыш",
