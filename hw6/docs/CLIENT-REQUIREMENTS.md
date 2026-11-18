@@ -125,7 +125,8 @@ Home (tagline/hook, button to book, button to explore, Instagram feed or link), 
 - Must be findable on Google. No ads planned. Embassies and partners will link to the site. (T 41:40)
 - Keywords not confirmed yet. Examples Lukas gave: "English speaking doctor", "evidence-based", "medical clinic Bishkek". (T 43:06)
 
-## 13. Infrastructure boundary
+## 13. Infrastructure
 
-- MercyMed owns the domain mercymed.kg and runs its own server for patient records.
-- **The website and admin panel must not run on, connect to, or touch that server.** The website is hosted separately.
+- MercyMed owns the domain **mercymed.kg** and has its own **server in Germany running OpenEMR** (their patient-records system). (U)
+- Hosting the website there would need their IT contact, **Troy**. (U)
+- The client did **not** ask for the website to stay off their server. Keeping the admin backend separate from the OpenEMR server is our team's decision (see `CLAUDE.md`), not a client requirement.
