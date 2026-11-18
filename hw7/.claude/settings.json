@@ -1,0 +1,64 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(git push)",
+      "Bash(git push *)",
+      "Bash(git reset --hard)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean -f)",
+      "Bash(git clean -f *)",
+      "Bash(git clean -fd)",
+      "Bash(git clean -fd *)",
+      "Bash(git clean -fdx)",
+      "Bash(git clean -fdx *)",
+      "Bash(git branch -d *)",
+      "Bash(git branch -D *)",
+      "Bash(git branch --delete *)",
+      "Bash(git rebase)",
+      "Bash(git rebase *)",
+      "Bash(git pull --rebase)",
+      "Bash(git pull --rebase *)",
+      "Bash(git checkout -f)",
+      "Bash(git checkout -f *)",
+      "Bash(git checkout .)",
+      "Bash(git restore .)",
+      "PowerShell(git push)",
+      "PowerShell(git push *)",
+      "PowerShell(git reset --hard)",
+      "PowerShell(git reset --hard *)",
+      "PowerShell(git clean -f)",
+      "PowerShell(git clean -f *)",
+      "PowerShell(git clean -fd)",
+      "PowerShell(git clean -fd *)",
+      "PowerShell(git clean -fdx)",
+      "PowerShell(git clean -fdx *)",
+      "PowerShell(git branch -d *)",
+      "PowerShell(git branch -D *)",
+      "PowerShell(git branch --delete *)",
+      "PowerShell(git rebase)",
+      "PowerShell(git rebase *)",
+      "PowerShell(git pull --rebase)",
+      "PowerShell(git pull --rebase *)",
+      "PowerShell(git checkout -f)",
+      "PowerShell(git checkout -f *)",
+      "PowerShell(git checkout .)",
+      "PowerShell(git restore .)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/block-dangerous-git.sh\"",
+            "onFailure": "block",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
