@@ -13,15 +13,15 @@ A static, one-page website with a sticky menu that jumps to each section.
 
 | Section | Content |
 |---|---|
-| Hero | Slide 12 headline, two buttons (WhatsApp appointment, see services), consultation languages, 4 highlights from slide 6 |
+| Hero | Slide 12 headline, two buttons (WhatsApp appointment, see services), Instagram link, 4 highlights from slide 6 |
 | About | Overview, history (mobile clinics 10+ years, clinic opened Oct 2023), what evidence-based medicine means, mission and values |
 | Services | Daily consultations, preventive check-ups, documents and certificates, additional services, prices placeholder |
 | Appointment | 4-field form that opens WhatsApp with a pre-filled message |
 | Team | 10 cards: photo, name, role, experience, short bio |
 | Corporate / International / Education | Who each is for and what MercyMed offers them |
 | Mobile clinics | How it works in 3 steps |
-| Instagram | Placeholder until account access is given |
-| Contact | Location, plus placeholders for address, hours, phone, email, Instagram |
+| Instagram | Link to @mercymed.kg; the feed itself is a placeholder until account access is given |
+| Contact | Location, address, phone / WhatsApp, email and Instagram as links; opening hours placeholder |
 
 ### Files
 
@@ -80,6 +80,14 @@ Not tested: a real WhatsApp send (the number is a placeholder).
 | 15 | The hook fails closed: missing jq, bad input, a script error, or a hook that can't start (`onFailure: block`) blocks the command | The skill's original script silently allowed everything when jq was missing |
 | 16 | Permission deny rules in `.claude/settings.json` repeat the same commands as a second layer | Defence in depth; they only match the plain command spellings |
 | 17 | `.gitattributes` keeps `*.sh` on LF line endings | A CRLF checkout on Windows would break the hook and block every command |
+| 18 | Contact details from CLIENT-REQUIREMENTS §10: address, phone +996 770 231 813 (`tel:`), email (`mailto:`), Instagram @mercymed.kg. The booking form still uses the placeholder `whatsappNumber` | Phase 1; the real number may not go into a `wa.me` link until the clinic confirms the receptionist's number |
+| 19 | Links are only built from `tel:`, `mailto:` and `https:` values (`makeLink` in `app.js`); anything else shows as plain text | Safe now, and ready for content coming from a database later |
+| 20 | From 1200px wide the header has two rows (logo + language + button, then the menu); the header button has a fixed minimum width | Feedback #1: the one-row header overflowed at 1280px and changed size per language. Approved by the team lead |
+| 21 | Every button and link is at least 44×44px (`min-inline-size` / `min-block-size`) | Feedback #3 |
+| 22 | Open Graph tags and a canonical link point at the GitHub Pages address | Feedback #4; **change them when the site moves to mercymed.kg** |
+| 23 | Font weights at most 500; only Inter 400 and 500 are loaded | Feedback #5 and the "not too bold" design rule |
+| 24 | Text shortened (feedback #6) as approved: one-sentence About intro, no repeats. The six consultation languages are listed only in International, not on Home. "Evidence-based" stays visible on Home and About | International patients look for their own language there |
+| 25 | Feedback #7 (icons) not done | Not marked "Fix" in FEEDBACK-REVIEW.md |
 
 Not building: online booking calendar, OpenEMR integration, patient accounts or lab results, medical AI, per-doctor pages, deployment to the clinic's German server.
 
@@ -89,9 +97,9 @@ Not building: online booking calendar, OpenEMR integration, patient accounts or 
 
 ### Needed from MercyMed
 - [ ] Receptionist's **WhatsApp number** (currently placeholder `996000000000`; set `settings.whatsappNumber` and `whatsappIsPlaceholder: false`)
-- [ ] Address, opening hours, phone, email (the phone in the questionnaire belongs to the logo designer)
+- [ ] Opening hours (address, phone, email and Instagram are now in; RU/KY address wording to be checked)
 - [ ] Prices
-- [ ] Instagram account link / feed access
+- [ ] Instagram feed access (the link is in)
 - [ ] **Confirm the slide 5 photos are real, not AI-generated**, or send real ones; real portrait of Nargiza
 - [ ] Experience and short bios for each team member (Madison, Simbat, Nargiza have none)
 - [ ] Review of Russian and Kyrgyz text, especially medical terms such as "далилдүү медицина" (evidence-based medicine)
@@ -104,6 +112,7 @@ Not building: online booking calendar, OpenEMR integration, patient accounts or 
 - Some portraits still show a little slide text at the edges (e.g. Mahabat).
 - Inter is loaded from Google Fonts; the page falls back to system fonts if it can't load.
 - Not hosted on the clinic's server or `mercymed.kg` yet (needs their tech support, Troy).
+- The menu highlights "About" while the top of the page (hero) is on screen; this was already so before Phase 1.
 
 ### Git guardrails (development only)
 - A safety net against mistakes, not against deliberate evasion: git aliases, variables (`$g push`) or a quoted full path with spaces can still get past it. The rules in `CLAUDE.md` still apply.
