@@ -97,7 +97,7 @@ a { color: var(--accent-text); }
 .btn-primary:hover { background: var(--orange-1); }
 .btn-ghost { background: transparent; color: var(--text); border-color: var(--grey); }
 .btn-ghost:hover { border-color: var(--orange-3); color: var(--accent-text); }
-.btn-small { min-height: 40px; padding: 8px 16px; font-size: .92rem; white-space: nowrap; }
+.btn-small { min-height: 44px; padding: 8px 16px; font-size: .92rem; white-space: nowrap; }
 .btn-block { width: 100%; }
 
 /* ---------- header ---------- */
@@ -108,21 +108,21 @@ a { color: var(--accent-text); }
   border-bottom: 1px solid var(--line);
 }
 .header-inner { display: flex; align-items: center; gap: 16px; min-height: var(--header-h); }
-.brand { flex-shrink: 0; }
+.brand { flex-shrink: 0; display: flex; align-items: center; min-block-size: 44px; }
 .brand img { height: 44px; width: auto; }
 /* Fixed width so the header doesn't shift when the language (and button text) changes. */
 .header-cta { min-inline-size: 12.5rem; }
 /* Wide screens: the menu gets its own row under the logo, so the longer
    RU/KY labels fit without changing the layout. */
 @media (min-width: 1200px) {
-  :root { --header-h: 124px; }
+  :root { --header-h: 118px; }
   .header-inner { flex-wrap: wrap; row-gap: 0; min-height: 0; padding-top: 8px; }
   .brand, .header-actions { min-height: 64px; display: flex; align-items: center; }
   .main-nav { order: 3; flex-basis: 100%; border-top: 1px solid var(--line); }
 }
 .main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 2px; }
 .main-nav a {
-  display: block; padding: 8px 10px; border-radius: 8px;
+  display: flex; align-items: center; min-block-size: 44px; padding: 8px 10px; border-radius: 8px;
   color: var(--text); text-decoration: none; font-size: .93rem; font-weight: 500; white-space: nowrap;
 }
 .main-nav a:hover { background: var(--tint); }
@@ -138,7 +138,7 @@ a { color: var(--accent-text); }
 .lang-switch button {
   font: inherit; font-size: .8rem; font-weight: 600; letter-spacing: .04em;
   border: 0; background: none; color: var(--muted);
-  min-width: 40px; min-height: 34px; border-radius: 999px; cursor: pointer;
+  min-inline-size: 44px; min-block-size: 44px; border-radius: 999px; cursor: pointer;
 }
 .lang-switch button[aria-pressed="true"] { background: var(--grey); color: #fff; }
 
@@ -170,7 +170,6 @@ a { color: var(--accent-text); }
   .brand img { height: 36px; }
   .header-inner { gap: 8px; }
   .header-actions { gap: 6px; }
-  .lang-switch button { min-width: 34px; }
 }
 
 /* ---------- hero ---------- */
@@ -297,6 +296,8 @@ a { color: var(--accent-text); }
 @media (min-width: 560px) { .contact-list > div { grid-template-columns: 160px 1fr; gap: 16px; } }
 .contact-list dt { font-weight: 600; }
 .contact-list dd { margin: 0; color: var(--muted); }
+/* Phone, email and Instagram links: at least 44px tall for easy tapping. */
+.contact-link { display: inline-flex; align-items: center; min-block-size: 44px; }
 .contact-cta { display: flex; flex-direction: column; align-items: center; gap: 20px; }
 .contact-logo { width: 160px; height: auto; mix-blend-mode: multiply; }
 
