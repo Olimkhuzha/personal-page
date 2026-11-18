@@ -91,6 +91,8 @@ Not tested: a real WhatsApp send (the number is a placeholder).
 | 26 | Below 1200px the menu stays behind the ☰ button; CLAUDE.md rule changed to "Menu always reachable at the top and leads back home (a menu button is fine on narrow screens)" | Team lead decision after the Phase 1 review |
 | 27 | `meta description` and `og:description` switch to RU/KY with the language | Never mix languages on one page |
 | 28 | Links that open a new tab carry hidden text "(opens in a new tab)" for screen readers | Phase 1 review |
+| 29 | Admin panel design recorded in `docs/ADMIN-SPEC.md` (roles, two-factor login, draft/preview/publish, history, language rules, data model, security rules, test plan) | Phase 2 `/grill-me` session with the team lead |
+| 30 | Optional hero photo slot (hidden while empty) replaces "no hero image" (decision 6) | Client wants real photos; decision 6 was a team choice |
 
 Not building: online booking calendar, OpenEMR integration, patient accounts or lab results, medical AI, per-doctor pages, deployment to the clinic's German server.
 
@@ -125,6 +127,10 @@ Not building: online booking calendar, OpenEMR integration, patient accounts or 
 - `git restore --staged .` is blocked even though it is harmless; use `git restore --staged <file>`.
 - The hook needs Git Bash and jq (installed with `winget install jqlang.jq`). Each check takes about 1 second on this PC.
 - The deny rules couldn't be tested on their own, because the hook always blocks first.
+
+### Before Phase 3
+- [ ] Starting roles (who is admin): team lead to confirm with Dr. Lukas
+- [ ] MercyMed email to own the Supabase project (otherwise start under the team lead and transfer at handover)
 
 ### Next steps
 1. Show the draft to Dr. Lukas and the MercyMed team for mid-point feedback (planned before end of November).
