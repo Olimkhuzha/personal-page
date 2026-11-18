@@ -148,6 +148,7 @@ The repository is **public**. Only the public (publishable / anon) key may appea
 |---|---|
 | Row Level Security on **every** table | Turned on for all tables in §6.2 |
 | Public can read published content only | Anonymous `SELECT` on content tables where `deleted_at is null`; promotions only while active today (Bishkek). No public access to `drafts`, `versions`, `staff` |
+| Public sees only public columns | Column-level grants: anonymous visitors may select only the columns the site shows — never `updated_by`, `updated_at`, `version` or `deleted_at`. The public site (and Export) always list columns explicitly; `select *` fails for anonymous visitors |
 | Only allow-listed staff with two-factor can write | One database function `is_staff()` = the logged-in user is in `staff`, `active = true`, **and** the session is two-factor verified (`aal2`). Every insert / update / delete policy requires it |
 | Only admins manage staff | Updates to `staff` require `is_admin()` (same as above plus `role = 'admin'`); a trigger refuses leaving zero active admins |
 | Permanent delete | Only `is_admin()` and only for items deleted 90+ days ago |
@@ -225,6 +226,7 @@ Run in Phase 3 (database), Phase 5 (panel) and again in Phase 6. Each attack tes
 | A15 | anyone | search the repo and the exported `content.js` for the service_role key, staff emails, drafts | nothing found |
 | A16 | attacker (test) | inject an inline `<script>` into a panel page (e.g. through the browser console adding a script element with inline code, and an `onclick=` attribute) | blocked by the Content-Security-Policy; a CSP violation shows in the console; nothing runs |
 | A17 | anyone | set a staff password shorter than 12 characters | refused by Supabase |
+| A18 | anonymous | select `updated_by` / `deleted_at` from any content table, or `select *` | refused; the explicit public columns still work |
 
 ### 11.2 Behaviour tests
 - Draft → preview → publish; preview visible only to the logged-in person.
