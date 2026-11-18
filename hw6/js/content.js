@@ -146,7 +146,7 @@ window.SITE_CONTENT = {
         eyebrow: "Private medical centre in Bishkek",
         title1: "Evidence-based, international medicine.",
         title2: "Care for the whole family in one place.",
-        text: "Local and international doctors for the whole family, in Tunguch, Bishkek.",
+        text: "Local and international doctors in Tunguch, Bishkek.",
         cta: "Request appointment via WhatsApp",
         secondary: "See our services",
         instaLabel: "Our latest news on Instagram:"
@@ -291,7 +291,7 @@ window.SITE_CONTENT = {
         eyebrow: "Частный медицинский центр в Бишкеке",
         title1: "Доказательная и международная медицина.",
         title2: "Забота обо всей семье в одном месте.",
-        text: "Местные и иностранные врачи для всей семьи — в Тунгуче, Бишкек.",
+        text: "Местные и иностранные врачи в Тунгуче, Бишкек.",
         cta: "Записаться через WhatsApp",
         secondary: "Наши услуги",
         instaLabel: "Наши новости в Instagram:"
@@ -332,7 +332,7 @@ window.SITE_CONTENT = {
       appointment: {
         kicker: "Запись",
         title: "Записаться на приём",
-        text: "Отправьте нам четыре поля в WhatsApp. Администратор предложит время и подходящего врача.",
+        text: "Заполните четыре поля и отправьте их в WhatsApp. Администратор предложит время и подходящего врача.",
         firstName: "Имя",
         lastName: "Фамилия",
         dob: "Дата рождения",
@@ -436,7 +436,7 @@ window.SITE_CONTENT = {
         eyebrow: "Бишкектеги жеке медициналык борбор",
         title1: "Далилдүү жана эл аралык медицина.",
         title2: "Бүт үй-бүлөгө бир жерде кам көрүү.",
-        text: "Бүт үй-бүлө үчүн жергиликтүү жана чет элдик дарыгерлер — Түңгүчтө, Бишкек.",
+        text: "Жергиликтүү жана чет элдик дарыгерлер Түңгүчтө, Бишкекте.",
         cta: "WhatsApp аркылуу жазылуу",
         secondary: "Биздин кызматтар",
         instaLabel: "Биздин жаңылыктар Instagram'да:"
@@ -477,7 +477,7 @@ window.SITE_CONTENT = {
       appointment: {
         kicker: "Жазылуу",
         title: "Кабыл алууга жазылуу",
-        text: "Төрт талааны WhatsApp аркылуу жөнөтүңүз. Администратор убакытты жана ылайыктуу дарыгерди сунуштайт.",
+        text: "Төрт талааны толтуруп, WhatsApp аркылуу жөнөтүңүз. Администратор убакытты жана ылайыктуу дарыгерди сунуштайт.",
         firstName: "Аты",
         lastName: "Фамилиясы",
         dob: "Туулган күнү",
