@@ -39,10 +39,12 @@ body {
 }
 img { max-width: 100%; display: block; }
 h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; letter-spacing: -0.01em; }
-h1 { font-weight: 600; font-size: clamp(2rem, 4.6vw, 3.4rem); }
-h2 { font-weight: 600; font-size: clamp(1.6rem, 3vw, 2.2rem); }
-h3 { font-weight: 600; font-size: 1.1rem; }
+h1 { font-weight: 500; font-size: clamp(2rem, 4.6vw, 3.4rem); }
+h2 { font-weight: 500; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+h3 { font-weight: 500; font-size: 1.1rem; }
 p { margin: 0 0 1em; }
+/* The client prefers finer fonts: nothing heavier than 500. */
+strong, b { font-weight: 500; }
 a { color: var(--accent-text); }
 [hidden] { display: none !important; }
 
@@ -88,7 +90,7 @@ a { color: var(--accent-text); }
   padding: 12px 22px;
   border-radius: 999px;
   border: 2px solid transparent;
-  font: inherit; font-weight: 600; font-size: 1rem;
+  font: inherit; font-weight: 500; font-size: 1rem;
   text-decoration: none;
   cursor: pointer;
   transition: background-color .15s, border-color .15s, color .15s;
@@ -136,7 +138,7 @@ a { color: var(--accent-text); }
 
 .lang-switch { display: flex; border: 1px solid var(--line); border-radius: 999px; padding: 2px; }
 .lang-switch button {
-  font: inherit; font-size: .8rem; font-weight: 600; letter-spacing: .04em;
+  font: inherit; font-size: .8rem; font-weight: 500; letter-spacing: .04em;
   border: 0; background: none; color: var(--muted);
   min-inline-size: 44px; min-block-size: 44px; border-radius: 999px; cursor: pointer;
 }
@@ -182,7 +184,7 @@ a { color: var(--accent-text); }
 }
 .hero-inner { max-width: 880px; }
 .eyebrow, .kicker {
-  font-size: .82rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  font-size: .82rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
   color: var(--accent-text); margin-bottom: .75rem;
 }
 .hero h1 span { display: block; }
@@ -277,7 +279,7 @@ a { color: var(--accent-text); }
   content: counter(step);
   display: inline-flex; align-items: center; justify-content: center;
   width: 36px; height: 36px; border-radius: 50%;
-  background: var(--orange-2); color: #1d1d1d; font-weight: 600; margin-bottom: 12px;
+  background: var(--orange-2); color: #1d1d1d; font-weight: 500; margin-bottom: 12px;
 }
 .step p { margin: 0; color: var(--muted); }
 
@@ -294,7 +296,7 @@ a { color: var(--accent-text); }
 .contact-list { margin: 0; }
 .contact-list > div { display: grid; grid-template-columns: 1fr; gap: 2px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 @media (min-width: 560px) { .contact-list > div { grid-template-columns: 160px 1fr; gap: 16px; } }
-.contact-list dt { font-weight: 600; }
+.contact-list dt { font-weight: 500; }
 .contact-list dd { margin: 0; color: var(--muted); }
 /* Phone, email and Instagram links: at least 44px tall for easy tapping. */
 .contact-link { display: inline-flex; align-items: center; min-block-size: 44px; }
